@@ -50,7 +50,7 @@ $.scrubBar.addEventListener('touchstart', function(e) {
 });
 
 $.scrubBar.addEventListener('change', function(e) {
-	if(sliderIsPausingPlayback){
+	if(sliderTouched){
 		// user is touching the slider
 		// update the time label
 		updateTimeLabel(e.value);
