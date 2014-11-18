@@ -3,6 +3,7 @@
 A small widget for Appcelerator Titanium. Its main purpose is to play audio files and showing media controls.
 
 
+![Alt text](/blob/master/audioplayer.gif?raw=true "Audio Player")
 
 ## How to use
 
