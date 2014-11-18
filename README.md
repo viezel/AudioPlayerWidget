@@ -11,8 +11,7 @@ A small widget for Appcelerator Titanium. Its main purpose is to play audio file
 
 
 ```xml
-<Widget id="audioPlayer" src="dk.napp.audioplayer"></Widget>
-win.add(imageView);
+<Widget id="audioPlayer" src="dk.napp.audioplayer" />
 ```
 
 ### Controller:
@@ -31,20 +30,24 @@ $.win.addEventListener('close', function() {
 
 	"#audioPlayer":{
 		styles:{
+			// you can override each UI element this way
+			// Just look at the id in the widget.xml
 			wrap: {
-				width: "260dp",
+				width: "280dp",
 				height: "100dp"
 			},
 			
 			playStopBtn: {
-				color: Alloy.CFG.clientMainColor
+				color: "red"
 			},
 			
 			scrubBar: {
-				tintColor: Alloy.CFG.clientMainColor
+				tintColor: "red"
 			}
 			
 		},
+		
+		// right now - this is ref to FontAwesome
 		playIcon: Alloy.Globals.icons.play,
 		pauseIcon: Alloy.Globals.icons.pause
 	}
