@@ -49,6 +49,14 @@ $.scrubBar.addEventListener('touchstart', function(e) {
 	}
 });
 
+$.scrubBar.addEventListener('change', function(e) {
+	if(sliderIsPausingPlayback){
+		// user is touching the slider
+		// update the time label
+		updateTimeLabel(e.value);
+	}
+});
+
 $.scrubBar.addEventListener('touchend', function(e) {
 
 	// always set the new time
@@ -118,18 +126,22 @@ function padLeft(nr, n, str) {
 	return Array(n - String(nr).length + 1).join(str || '0') + nr;
 }
 
-function updateTimeLabel() {
-	// calc the duration - only once started
+function calcTotalDurationForTimeLabel(){
+	// calc the duration - only once
 	totalDisplayDuration = prettifyTime(getDuration() / 1000);
+}
 
-	$.time.text = prettifyTime(Math.round(audioPlayer.time) / 1000) + " / " + totalDisplayDuration;
+function updateTimeLabel(time) {
+	if(!time){
+		time = audioPlayer.time;
+	}
+
+	$.time.text = prettifyTime(Math.round(time) / 1000) + " / " + totalDisplayDuration;
 }
 
 function startTimer() {
 	// twice pr second
 	if (!timerIsActive) {
-		// calc the duration - only once started
-		totalDisplayDuration = prettifyTime(getDuration() / 1000);
 
 		timer = setInterval(function() {
 			var currentTime = Math.round(audioPlayer.time);
@@ -180,7 +192,10 @@ exports.setUrl = function(url) {
 		url : url,
 		allowBackground : true
 	});
-
+	
+	// calc the duration
+	calcTotalDurationForTimeLabel();
+	
 	// new sound - update the display
 	updateTimeLabel();
 	
