@@ -1,0 +1,7 @@
+<Alloy>
+	<View id="wrap" >
+		<Label id="time" />
+		<Button id="playStopBtn" onClick="onPlayStopBtnClicked" />
+		<Slider id="scrubBar" />
+	</View>
+</Alloy>

@@ -1,0 +1,36 @@
+"#wrap":{
+	width: "260dp",
+	height: "100dp"
+}
+
+"#playStopBtn":{
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	backgroundColor:"transparent",
+	font: {
+        fontSize: "24dp",
+        fontFamily: "FontAwesome"
+   	},
+   	color: "#000",
+	top: 0,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE
+}
+
+"#time":{
+	top: "10dp",
+	right:0,
+	width: Ti.UI.SIZE
+}
+
+"#scrubBar":{
+	top: "40dp",
+	width: "260dp",
+	height: "30dp",
+	min: 0,
+	max: 100,
+	value: 0
+}
+
+"#scrubBar[platform=ios]":{
+	style: Titanium.UI.iPhone.ProgressBarStyle.PLAIN
+}

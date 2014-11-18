@@ -1,0 +1,13 @@
+{
+	"id": "dk.napp.audioplayer",
+	"name": "dk.napp.audioplayer",
+	"description" : "Audio Player Widget",
+	"author": "Mads Møller",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2014 Napp ApS",
+	"license":"Public Domain",
+	"min-alloy-version": "1.0",
+	"min-titanium-version":"3.0",
+	"tags":"",
+	"platforms":"android,ios"
+}
